@@ -11,9 +11,13 @@ app.get("/config.json", (req, res) => {
   res.sendFile(path.join(__dirname, "config.json"));
 });
 
-app.get("/", (req, res) => {
-  web.html(res);
+app.get("/", async function (req, res) {
+res.sendFile(path.join(__dirname,  "./index.html"));
 });
+/*app.get("/", (req, res) => {
+  web.html(res);
+});*/
+
 
 app.get("/webhook", (req, res) => {
   web.verify(req, res);
